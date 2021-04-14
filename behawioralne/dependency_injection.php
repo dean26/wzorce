@@ -1,6 +1,7 @@
 <?php 
 
 /**
+ * DEPENDENCY INJECTION
  * luźne powiązania między klasami
  */
 
