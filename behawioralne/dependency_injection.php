@@ -79,7 +79,7 @@ class WelcomeMessage{
 }
 
 $admin = new SimpleUser(1);
-$redirect = new WelcomeMessage($admin);
-echo $redirect->getTextByType();
+$message = new WelcomeMessage($admin);
+echo $message->getTextByType();
 
 
