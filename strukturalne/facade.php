@@ -46,7 +46,13 @@ class User {
  * UserMessage
  */
 class UserMessage{
-    
+
+    private User $user;
+
+    public function __construct(User $user){
+        $this->setUser($user);
+    }
+
     /**
      * getAllMessages
      *
@@ -57,6 +63,15 @@ class UserMessage{
         return "list with all messages to user\n";
     }
 
+    /**
+     * Set the value of user
+     *
+     * @return  self
+     */ 
+    public function setUser($user): void
+    {
+        $this->user = $user;
+    }
 }
 
 /**
@@ -64,6 +79,11 @@ class UserMessage{
  */
 class UserFiles{
     
+    private User $user;
+
+    public function __construct(User $user){
+        $this->setUser($user);
+    }
     /**
      * getAllFiles
      *
@@ -72,6 +92,16 @@ class UserFiles{
     public function getAllFiles(): string
     {
         return "list with all files belongs to user\n";
+    }
+
+    /**
+     * Set the value of user
+     *
+     * @return  self
+     */ 
+    public function setUser($user): void
+    {
+        $this->user = $user;
     }
 }
 
@@ -93,8 +123,8 @@ class UserFacade{
     public function __construct(string $user_name)
     {
         $this->setUser(new User($user_name));
-        $this->setUser_file(new UserFiles());
-        $this->setUser_message(new UserMessage());
+        $this->setUser_file(new UserFiles($this->getUser()));
+        $this->setUser_message(new UserMessage($this->getUser()));
     }
 
     /**
