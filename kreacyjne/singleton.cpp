@@ -24,7 +24,7 @@ private:
     static db *instance;
 
 protected:
-/**
+    /**
  * @brief Construct a new db object must be protected to avoid make new instances outside class
  * 
  */
