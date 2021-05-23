@@ -3,9 +3,11 @@
 /**
  * Factory is an object for creating other objects.
  * There is a simple implementation, BlogPost and News.
+*/
+
+/**
+ * Article interface
  */
-
-
 interface Article
 {
     public function getHeader();
@@ -63,7 +65,6 @@ abstract class Factory
     public abstract function getArticle();
 }
 
-
 /**
  * ArticleFactory
  */
@@ -88,7 +89,6 @@ final class ArticleFactory extends Factory
     }
 }
 
-
 /**
  * ArticleShow class to get article
  */
@@ -107,7 +107,6 @@ final class ArticleShow
         return $article->getHeader() . ' ' . $article->getBody() . ' ' . $article->getFooter();
     }
 }
-
 
 $article = new ArticleShow(new ArticleFactory('news'));
 echo $article->getFullBody();
