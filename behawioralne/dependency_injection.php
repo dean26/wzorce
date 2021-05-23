@@ -28,7 +28,8 @@ class SimpleUser
      *
      * @return int
      */
-    public function getType(): int{
+    public function getType(): int
+    {
         return $this->type;
     }
 }
@@ -58,7 +59,8 @@ class WelcomeMessage{
      *
      * @return string
      */
-    public function getTextByType(): string{
+    public function getTextByType(): string
+    {
 
         $text = "";
 
@@ -78,8 +80,8 @@ class WelcomeMessage{
 
 }
 
-$admin = new SimpleUser(1);
-$message = new WelcomeMessage($admin);
+$user_male = new SimpleUser(1);
+$message = new WelcomeMessage($user_male);
 echo $message->getTextByType();
 
 
