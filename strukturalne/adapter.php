@@ -10,8 +10,8 @@ interface File
     public function loadXmlFile();
 }
 
-class XML implements File{
-
+class XML implements File
+{
     public function loadXmlFile()
     {
     
@@ -22,7 +22,6 @@ class XML implements File{
         $json = new JSON();
         $json->loadJsonFromFile();
     }
-
 }
 
 class JSON
