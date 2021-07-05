@@ -14,7 +14,6 @@ class XML implements File
 {
     public function loadXmlFile()
     {
-    
         //old version
         //echo 'Loading xml from file...';
 
