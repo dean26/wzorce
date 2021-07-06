@@ -48,8 +48,13 @@ class Manager(object):
         self.builder.build_body()
         self.builder.build_footer()
 
+class Client(object):
 
-builder = PageBuilder()
-manager = Manager(builder)
-manager.build()
-print(builder.get_all_parts())
+    def __init__(self):
+        builder = PageBuilder()
+        manager = Manager(builder)
+        manager.build()
+        print(builder.get_all_parts())
+
+
+client = Client()
